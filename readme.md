@@ -10,8 +10,8 @@
 
 ### roadmaps
 
+- [backend roadmap](https://gitlab.com/gmanka/galaxy_backend/-/blob/main/docs/backend_roadmap.md)
 - [frontend roadmap](https://gitlab.com/gmanka/galaxy_frontend/-/blob/main/docs/frontend_roadmap.md)
-- [backend roadmap](https://gitlab.com/gmanka/galaxy_frontend/-/blob/main/docs/frontend_roadmap.md)
 
 ### other
 
