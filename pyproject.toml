@@ -1,0 +1,16 @@
+[project]
+dependencies = [
+    'rich',
+    'aiogram',
+]
+name = 'galaxy_backend'
+version = '24.0.0'
+requires-python = '>=3.11'
+
+[project.scripts]
+galaxy_backend = 'galaxy_backend.core.main:main'
+
+[tool.pyright]
+venvPath = "."
+venv = ".venv"
+
