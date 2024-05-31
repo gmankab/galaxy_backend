@@ -1,6 +1,7 @@
-### install
+### how to run backend
 
-
+1. install python
+2.
 ```shell
 git clone https://gitlab.com/gmanka/galaxy_backend
 cd galaxy_backend
