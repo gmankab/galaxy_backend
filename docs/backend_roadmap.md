@@ -6,10 +6,10 @@
 - [ ] stickerpack
 - [ ] reward for reqruited friend
 - [ ] autotests for hello message
-- [ ] init fastapi
-- [ ] init tortoise orm
-- [ ] fastapi `click` method that increasing coins amount
-- [ ] autotests for fastapi `click` method
-- [ ] save user's coins count in database by his telegram id
+- [x] init fastapi
+- [x] init tortoise orm
+- [x] fastapi `click` method that increasing coins amount
+- [x] autotests for fastapi `click` method
+- [x] save user's coins count in database by his telegram id
 - [ ] podman compose (we don't use docker, we use podman only)
 
