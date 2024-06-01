@@ -12,8 +12,9 @@ class Coin(Model):
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
+    db_url = app.state.db_url if hasattr(app.state, 'db_url') else 'sqlite://data.db'
     await Tortoise.init(
-        db_url='sqlite://data.db',
+        db_url=db_url,
         modules={'models': ['main']}
     )
     await Tortoise.generate_schemas()

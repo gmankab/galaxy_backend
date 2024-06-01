@@ -7,7 +7,8 @@ from main import app
 
 @pytest.fixture(scope="module", autouse=True)
 def client() -> Generator:
-    initializer(["main"])  # Ensure 'main' matches the module where your models are defined
+    initializer(["main"], db_url="sqlite://:memory:", app_label="models")
+    app.state.db_url = "sqlite://:memory:"
     with TestClient(app) as test_client:
         yield test_client
     finalizer()
