@@ -1,5 +1,6 @@
 from core.common import all, tg
 import fastapi.middleware
+import fastapi.middleware.cors
 import fastapi.testclient
 import fastapi
 import core.shutdown
@@ -44,5 +45,13 @@ transport = httpx.ASGITransport(app) # type: ignore
 all.async_client = httpx.AsyncClient(
     transport=transport,
     base_url='http://test',
+)
+
+app.add_middleware(
+    fastapi.middleware.cors.CORSMiddleware,
+    allow_origins=['*'],
+    allow_credentials=True,
+    allow_methods=['GET', 'POST'],
+    allow_headers=['*']
 )
 
