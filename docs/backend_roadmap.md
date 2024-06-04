@@ -2,11 +2,11 @@
 
 - [x] bd60da68 init aiogram telegram bot on backend
 - [x] bd60da68 hello message with `start game` button that opens frontend
-- [x] a08eafd7 init fastapi
-- [x] a08eafd7 init tortoise orm
-- [x] a08eafd7 fastapi `click` method that increasing coins amount
-- [x] b215eff3 autotests for fastapi `click` method
-- [x] a08eafd7 save user's coins count in database by his telegram id
+- [x] a08eafd7 & d041a879 init fastapi
+- [x] a08eafd7 & d041a879 init tortoise orm
+- [x] a08eafd7 & d041a879 fastapi `/coin/add` method that increasing coins amount
+- [x] a08eafd7 & d041a879 save user's coins count in database by his telegram id
+- [x] b215eff3 & d041a879 autotests for fastapi methods
 - [ ] bot should request telegram channel subscription, channel id should be set in core/config.py
 - [ ] stickerpack
 - [ ] reward for reqruited friend
