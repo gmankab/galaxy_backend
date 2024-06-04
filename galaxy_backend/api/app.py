@@ -9,7 +9,7 @@ import contextlib
 import tortoise
 import asyncio
 import httpx
-
+import models.db
 
 async def init_db():
     await tortoise.Tortoise.init(
@@ -31,6 +31,10 @@ async def lifespan(
         all.logger.info('started tg bot')
     else:
         all.logger.warn('tg_token is not in env, skipping tg bot start')
+        await models.db.User.get_or_create(
+            tg_id=12345,
+            coins=0,
+        )
     yield
     await core.shutdown.shutdown()
 
