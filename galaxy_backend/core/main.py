@@ -1,14 +1,9 @@
-from core.common import all
-import tg.game
-import asyncio
+# ruff: noqa: F401
+import tg.game as __game__
+import api.coins
+import api.app
+import api.routers
 
-
-async def async_main() -> None:
-    tg.game.my_pass()
-    all.log('[green]started')
-    await all.dp.start_polling(all.bot)
-
-
-def main():
-    asyncio.run(async_main())
+app = api.app.app
+app.include_router(api.routers.coin)
 

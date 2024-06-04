@@ -1,18 +1,21 @@
 import os
 
 
-class tg:
-    token: str
+class env:
+    game_url: str = 'https://gmanka.gitlab.io/galaxy_frontend'
+    db_url: str = 'sqlite://:memory:'
+    tg_token: str = ''
+    tests: str = ''
 
 
-class web:
-    url = 'https://gmanka.gitlab.io/galaxy_frontend'
+def set_env():
+    for key, value_type in env.__annotations__.items():
+        value = os.getenv(key)
+        if value:
+            assert isinstance(value_type, type)
+            assert isinstance(value, value_type)
+            setattr(env, key, value)
 
 
-def main():
-    token = os.getenv('tg_token')
-    assert isinstance(token, str)
-    tg.token = token
-
-main()
+set_env()
 
