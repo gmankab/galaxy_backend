@@ -10,7 +10,7 @@
 - [ ] telegram channel subscription
 - [ ] bot should request telegram channel subscription, channel id should be set in core/config.py
 - [ ] add stickerpack
-- [ ] reward for reqruited friend
+- [ ] reward for a recruited friend
 - [ ] autotests for hello message
 - [ ] podman compose
 
