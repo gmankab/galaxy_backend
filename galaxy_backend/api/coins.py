@@ -47,7 +47,7 @@ async def get_coins(
 
 async def autoclick_task(tg_id: int, interval: int, duration: int):
     '''
-    Фоновая задача для добавления монет пользователю с заданным интервалом и длительностью.
+    Background task for adding coins to the user with a specified interval and duration.
     '''
     start_time = asyncio.get_event_loop().time()
     end_time = start_time + duration
@@ -69,7 +69,7 @@ async def start_autoclick(
     background_tasks: fastapi.BackgroundTasks
 ) -> models.other.Success:
     '''
-    Запускает автокликер для добавления монет периодически.
+    Runs an autoclicker to add coins periodically.
     '''
     background_tasks.add_task(autoclick_task, tg_id, interval, duration)
     return models.other.Success()
