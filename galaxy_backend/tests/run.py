@@ -8,6 +8,7 @@ async def main():
         init.create_user,
         coins.get_coins,
         coins.add_coins,
+        coins.start_autoclick
     ]
     for func in to_run:
         msg = await func()
