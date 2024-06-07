@@ -32,14 +32,14 @@ async def add_coins():
 
 
 async def start_autoclick():
-    params = {
+    json = {
         'tg_id': 0,
         'interval': 1,
         'duration': 5
     }
     response = await all.async_client.post(
         '/coin/autoclick',
-        params=params
+        json=json
     )
 
     data = response.json()
