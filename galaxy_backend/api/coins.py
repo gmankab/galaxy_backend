@@ -63,13 +63,11 @@ async def autoclick_task(tg_id: int, interval: int, duration: int):
 
 @api.routers.coin.post('/autoclick')
 async def start_autoclick(
-    tg_id: int,
-    interval: int,
-    duration: int,
+    request: models.coins.autoClickRequest,
     background_tasks: fastapi.BackgroundTasks
 ) -> models.other.Success:
     '''
     Runs an autoclicker to add coins periodically.
     '''
-    background_tasks.add_task(autoclick_task, tg_id, interval, duration)
+    background_tasks.add_task(autoclick_task, request.tg_id, request.interval, request.duration)
     return models.other.Success()
