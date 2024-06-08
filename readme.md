@@ -1,21 +1,24 @@
 ### repositories
 
-- [backend repo](https://gitlab.com/gmanka/galaxy_backend)
-- [frontend repo](https://gitlab.com/gmanka/galaxy_frontend)
+- [backend repo](https://github.com/gmankab/galaxy_backend)
+- [frontend repo](https://github.com/gmankab/galaxy_frontend)
 
 ### how to run
 
-- [backend run](https://gitlab.com/gmanka/galaxy_backend/-/blob/main/docs/backend_run.md)
-- [frontend run](https://gitlab.com/gmanka/galaxy_frontend/-/blob/main/docs/frontend_run.md)
+- [backend run](https://github.com/gmankab/galaxy_backend/blob/main/docs/backend_run.md)
+- [frontend run](https://github.com/gmankab/galaxy_frontend/blob/main/docs/frontend_run.md)
 
 ### roadmaps
 
-- [backend roadmap](https://gitlab.com/gmanka/galaxy_backend/-/blob/main/docs/backend_roadmap.md)
-- [frontend roadmap](https://gitlab.com/gmanka/galaxy_frontend/-/blob/main/docs/frontend_roadmap.md)
-- [frontend and backend](https://gitlab.com/gmanka/galaxy_frontend/-/blob/main/docs/frontend_and_backend_roadmap.md)
+- [backend roadmap](https://github.com/gmankab/galaxy_backend/blob/main/docs/backend_roadmap.md)
+- [frontend roadmap](https://github.com/gmankab/galaxy_frontend/blob/main/docs/frontend_roadmap.md)
+- [frontend and backend](https://github.com/gmankab/galaxy_frontend/blob/main/docs/frontend_and_backend_roadmap.md)
 
 ### other
 
-- [contributing](https://gitlab.com/gmanka/galaxy_frontend/-/blob/main/docs/contributing.md)
-- [technical task ru](https://gitlab.com/gmanka/galaxy_frontend/-/blob/main/docs/tt_ru.md)
+- [contributing](https://github.com/gmankab/galaxy_frontend/blob/main/docs/contributing.md)
+
+### license
+
+license is [gnu agpl 3](https://gnu.org/licenses/agpl-3.0.en.html)
 
