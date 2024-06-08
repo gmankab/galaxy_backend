@@ -8,14 +8,18 @@ import aiogram
 require_channel_subscription: str = core.config.env.channel_username
 
 class inline_keyboard:
-    button = aiogram.types.InlineKeyboardButton(
+    button1 = aiogram.types.InlineKeyboardButton(
         text='start game',
         web_app=aiogram.types.WebAppInfo(
             url=core.config.env.game_url,
         ),
     )
+    button2 = aiogram.types.InlineKeyboardButton(
+        text='bonus',
+        callback_data='bonus'
+    )
     markup = aiogram.types.InlineKeyboardMarkup(
-        inline_keyboard=[[button]]
+        inline_keyboard=[[button1], [button2]]
     )
 
 @all.dp.message()
