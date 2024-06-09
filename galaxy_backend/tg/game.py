@@ -40,7 +40,7 @@ async def on_message(
                 inline_keyboard=[[
                     aiogram.types.InlineKeyboardButton(
                         text='Subscribe',
-                        url=f'https://t.me/{core.config.env.channel_username}'
+                           url=f'https://t.me/{core.config.env.channel_username.lstrip("@")}'
                     )
                 ]]
             )
