@@ -6,11 +6,21 @@ async def timer(
     to_run: core.types.cor_str
 ):
     start = datetime.datetime.now()
-    msg = await to_run()
+    error: str = ''
+    msg: str = ''
+    try:
+        msg = await to_run()
+    except core.types.NotPassed as e:
+        error = e.msg
     end = datetime.datetime.now()
     delta = end - start
     ms = int(delta.total_seconds() * 1000)
-    all.logger.info(
-        f'[passed] {ms} ms {msg}'
-    )
+    if msg:
+        all.console.log(
+            f'[green]\\[passed] {ms} ms[/] {msg}'
+        )
+    else:
+        all.console.log(
+            f'[red]\\[error] {ms} ms[/] {error}'
+        )
 
