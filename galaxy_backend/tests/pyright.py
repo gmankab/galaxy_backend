@@ -5,28 +5,6 @@ import asyncio
 import sys
 
 
-async def on_fail(pyright_stderr: str) -> None:
-    process = await asyncio.create_subprocess_exec(
-        'node',
-        '--version',
-        stdin=asyncio.subprocess.PIPE,
-        stdout=asyncio.subprocess.PIPE,
-    )
-    node_stdout, _ = await process.communicate()
-    node_stdout = node_stdout.decode().strip()
-    raise core.types.NotPassed(
-        f"can't run pyright test: {pyright_stderr}\nnode version: {node_stdout}"
-    )
-
-
-async def on_success(stdout: str):
-    success = '0 errors, 0 warnings, 0 information'
-    if success in stdout:
-        return f'pyright: {stdout}'
-    else:
-        raise core.types.NotPassed(stdout)
-
-
 async def pyright() -> str:
     pyrightconfig = core.common.path.pyproject
     python_version = platform.python_version()
@@ -43,9 +21,14 @@ async def pyright() -> str:
         *cmd,
         stdin=asyncio.subprocess.PIPE,
         stdout=asyncio.subprocess.PIPE,
+        stderr=asyncio.subprocess.PIPE,
     )
     stdout, stderr = await process.communicate()
-    if stderr:
-        await on_fail(stderr.decode().strip())
-    return await on_success(stdout.decode().strip())
+    stdout_str = stdout.decode().strip()
+    stderr_str = stderr.decode().strip()
+    success = '0 errors, 0 warnings, 0 information'
+    if success in stdout_str:
+        return f'pyright: {stdout_str}'
+    else:
+        raise core.types.NotPassed(stdout_str + stderr_str)
 

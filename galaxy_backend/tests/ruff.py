@@ -16,13 +16,14 @@ async def ruff() -> str:
         *cmd,
         stdin=asyncio.subprocess.PIPE,
         stdout=asyncio.subprocess.PIPE,
+        stderr=asyncio.subprocess.PIPE,
     )
-    response = await process.communicate()
-    stdout = response[0]
+    stdout, stderr = await process.communicate()
     stdout_str = stdout.decode().strip()
+    stderr_str = stderr.decode().strip()
     success = 'All checks passed!'
     if stdout_str == success:
         return f'ruff: {stdout_str}'
     else:
-        raise core.types.NotPassed(stdout_str)
+        raise core.types.NotPassed(stdout_str + stderr_str)
 
