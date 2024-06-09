@@ -11,7 +11,7 @@ python -m venv .venv
 ```
 3. install autotests dependences
 ```shell
-.venv/bin/pip install ruff pyright
+.venv/bin/pip install -U ruff pyright
 ```
 4. now you can run code
 
