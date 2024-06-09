@@ -9,6 +9,12 @@ name = 'galaxy_backend'
 version = '24.0.0'
 requires-python = '>=3.11'
 
+[project.optional-dependencies]
+tests = [
+    'pyright',
+    'ruff',
+]
+
 [project.scripts]
 galaxy_backend = 'galaxy_backend.__main__:main'
 
