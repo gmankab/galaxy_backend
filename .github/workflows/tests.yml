@@ -1,0 +1,34 @@
+name: autotests
+on: [push, pull_request]
+jobs:
+  autotests-linux:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.12'
+    - name: dependencies
+      run: |
+        python -m venv .venv
+        .venv/bin/pip install -U pip
+        .venv/bin/pip install -U tortoise-orm aiogram fastapi rich ruff pyright
+    - name: tests
+      run: tests=true .venv/bin/python galaxy_backend
+  autotests-windows:
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.12'
+    - name: dependencies
+      run: |
+        python -m venv .venv
+        .venv/scripts/pip install -U pip
+        .venv/scripts/pip install -U tortoise-orm aiogram fastapi rich ruff pyright
+    - name: tests
+      run: |
+        $env:tests = 'true'
+        .venv/scripts/python galaxy_backend
+
