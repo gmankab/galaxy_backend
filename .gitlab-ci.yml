@@ -1,0 +1,30 @@
+stages:
+  - autotests
+
+cache:
+  key: ${CI_COMMIT_REF_SLUG}
+  paths:
+    - .venv
+
+autotests_linux:
+  stage: autotests
+  image: python:3.12
+  script:
+    - python -m venv .venv
+    - .venv/bin/pip install -U pip
+    - .venv/bin/pip install -U tortoise-orm aiogram fastapi rich ruff pyright
+    - tests=true .venv/bin/python galaxy_backend
+
+autotests_windows:
+  stage: autotests
+  tags:
+    - saas-windows-medium-amd64
+  script:
+    - $env:tests = 'true'
+    - choco install python --version=3.12 -y -f
+    - choco install nodejs --version=22 -y -f
+    - C:/Python312/python.exe -m venv .venv
+    - .venv/scripts/python.exe -m pip install -U pip
+    - .venv/scripts/python.exe -m pip install -U tortoise-orm aiogram fastapi rich ruff pyright
+    - .venv/scripts/python.exe galaxy_backend
+
