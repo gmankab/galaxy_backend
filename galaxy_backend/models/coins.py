@@ -9,7 +9,3 @@ class AddRequest(BaseModel):
 class GetResponse(BaseModel):
     coins: int
 
-class autoClickRequest(BaseModel):
-    tg_id: int
-    interval: int
-    duration: int

@@ -1,10 +1,11 @@
 import tortoise.exceptions
 import api.routers
+import core.config
 import models.other
 import models.coins
 import models.db
 import fastapi
-import asyncio
+
 
 @api.routers.coin.post('/add')
 async def set_coins(
@@ -45,29 +46,18 @@ async def get_coins(
         coins=user.coins,
     )
 
-async def autoclick_task(tg_id: int, interval: int, duration: int):
-    '''
-    Background task for adding coins to the user with a specified interval and duration.
-    '''
-    start_time = asyncio.get_event_loop().time()
-    end_time = start_time + duration
-    while asyncio.get_event_loop().time() < end_time:
-        try:
-            user = await models.db.User.get(tg_id=tg_id)
-            user.coins += 1  # Добавляем одну монету за каждый интервал
-            await user.save()
-        except tortoise.exceptions.DoesNotExist:
-            # Если пользователь не найден, прерываем выполнение
-            break
-        await asyncio.sleep(interval)
 
-@api.routers.coin.post('/autoclick')
+@api.routers.coin.get(
+    '/autoclick',
+)
 async def start_autoclick(
-    request: models.coins.autoClickRequest,
-    background_tasks: fastapi.BackgroundTasks
+    tg_id: int,
 ) -> models.other.Success:
     '''
-    Runs an autoclicker to add coins periodically.
+    runs an autoclicker to add coins in background
     '''
-    background_tasks.add_task(autoclick_task, request.tg_id, request.interval, request.duration)
+    user = await models.db.User.get(tg_id=tg_id)
+    user.autoclicks_remain = core.config.env.clicks_count
+    await user.save()
     return models.other.Success()
+

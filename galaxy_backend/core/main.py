@@ -1,7 +1,8 @@
 # ruff: noqa: F401
 import tg.game as __game__
-import api.coins
+import api.autoclick
 import api.app
+import api.coins
 import api.routers
 
 app = api.app.app
