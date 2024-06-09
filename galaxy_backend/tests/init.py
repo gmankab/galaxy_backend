@@ -8,5 +8,5 @@ async def create_user():
         tg_id=0,
         coins=0,
     )
-    return 'passed create user'
+    return 'create user'
 

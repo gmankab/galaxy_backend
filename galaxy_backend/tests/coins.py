@@ -11,7 +11,7 @@ async def get_coins() -> str:
     data = response.json()
     assert response.status_code == 200
     assert data['coins'] == 0
-    return 'passed coins get test'
+    return 'coins get'
 
 
 async def add_coins():
@@ -28,7 +28,7 @@ async def add_coins():
     assert data["success"] is True
     updated_user = await models.db.User.get(tg_id=0)
     assert updated_user.coins == 50
-    return 'passed coins add test'
+    return 'coins add'
 
 
 async def start_autoclick():
@@ -50,4 +50,5 @@ async def start_autoclick():
 
     updated_user = await models.db.User.get(tg_id=0)
     assert updated_user.coins == 55
-    return 'passed autoclick test'
+    return 'autoclick'
+

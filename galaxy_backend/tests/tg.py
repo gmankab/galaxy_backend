@@ -6,7 +6,7 @@ from tg.game import on_message, inline_keyboard
 
 async def test_on_message_user_not_subscribed():
     mock_bot = AsyncMock()
-    mock_bot.get_chat_member.return_value = types.ChatMember(status='left') 
+    mock_bot.get_chat_member.return_value = types.ChatMember(status='left')
     mock_message = AsyncMock(spec=types.Message)
     mock_message.from_user = types.User(id=12345, is_bot=False, first_name="Test")
     mock_message.text = "Hello"
@@ -27,11 +27,11 @@ async def test_on_message_user_not_subscribed():
             ]]
         )
     )
-    return 'passed on message user not subscribed test'
+    return 'on message user not subscribed'
 
 async def test_on_message_user_subscribed():
     mock_bot = AsyncMock()
-    mock_bot.get_chat_member.return_value = types.ChatMember(status='member') 
+    mock_bot.get_chat_member.return_value = types.ChatMember(status='member')
     mock_message = AsyncMock(spec=types.Message)
     mock_message.from_user = types.User(id=67890, is_bot=False, first_name="Test")
     mock_message.text = "Hello"
@@ -45,7 +45,7 @@ async def test_on_message_user_subscribed():
         text='hello',
         reply_markup=inline_keyboard.markup
     )
-    return 'passed on message user subscribed test'
+    return 'on message user subscribed'
 
 async def test_on_message_no_user():
     mock_message = AsyncMock(spec=types.Message)
@@ -54,7 +54,7 @@ async def test_on_message_no_user():
 
     await on_message(mock_message)
     mock_message.answer.assert_not_called()
-    return 'passed test on message no user test'
+    return 'test on message no user'
 
 # Run tests
 if __name__ == '__main__':
