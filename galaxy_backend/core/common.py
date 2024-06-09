@@ -60,6 +60,7 @@ class all:
     console: rich.console.Console = rich.console.Console()
     dp: aiogram.Dispatcher = tg.dp
     version: str = app.version
-    name = app.name
-    logger = logger.logger
+    name: str = app.name
+    logger: logging.Logger = logger.logger
+    exit_code: int = 0
 

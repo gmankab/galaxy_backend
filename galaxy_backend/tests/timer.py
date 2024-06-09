@@ -11,7 +11,11 @@ async def timer(
     try:
         msg = await to_run()
     except core.types.NotPassed as e:
+        all.exit_code = 1
         error = e.msg
+    except Exception as e:
+        all.exit_code = 1
+        raise e
     end = datetime.datetime.now()
     delta = end - start
     ms = int(delta.total_seconds() * 1000)
