@@ -1,9 +1,14 @@
-from tests import init, coins, tg
-from core.common import all
+import core.types
 import core.shutdown
+from tests import (
+    init,
+    coins,
+    tg,
+    timer,
+)
 
 async def main():
-    to_run = [
+    to_run_list: list[core.types.cor_str] = [
         init.create_user,
         coins.get_coins,
         coins.add_coins,
@@ -12,9 +17,9 @@ async def main():
         tg.test_on_message_user_subscribed,
         tg.test_on_message_no_user
     ]
-    for func in to_run:
-        msg = await func()
-        all.logger.info(msg)
+    for to_run in to_run_list:
+        await timer.timer(
+            to_run=to_run
+        )
     await core.shutdown.shutdown()
-
 
