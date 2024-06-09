@@ -5,15 +5,13 @@
 ```shell
 git clone https://gitlab.com/gmanka/galaxy_backend
 cd galaxy_backend
-python -m ensurepip
-python -m pip install uv
-python -m uv venv
-python -m uv pip install -r pyproject.toml
+python -m venv .venv
+.venb/bin/pip install -U pip
+.venv/bin/pip install -U tortoise-orm aiogram fastapi rich
 ```
 3. install autotests dependences
-
 ```shell
-python -m uv pip install ruff pyright
+.venv/bin/pip install ruff pyright
 ```
 4. now you can run code
 
