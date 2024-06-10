@@ -6,7 +6,6 @@ import aiogram.types
 import aiogram.utils
 import aiogram
 
-
 class inline_keyboard:
     button1 = aiogram.types.InlineKeyboardButton(
         text='start game',
@@ -22,6 +21,19 @@ class inline_keyboard:
         inline_keyboard=[[button1], [button2]]
     )
 
+    back_button = aiogram.types.InlineKeyboardButton(
+        text='back',
+        callback_data='back'
+    )
+    back_markup = aiogram.types.InlineKeyboardMarkup(
+        inline_keyboard=[[back_button]]
+    )
+
+def is_bonus_callback(query: aiogram.types.CallbackQuery) -> bool:
+    return query.data == 'bonus'
+
+def is_back_callback(query: aiogram.types.CallbackQuery) -> bool:
+    return query.data == 'back'
 
 @all.dp.message()
 async def on_message(
@@ -35,12 +47,12 @@ async def on_message(
     )
     if user_status.status not in ['member', 'administrator', 'creator']:
         await msg.answer(
-            text='Please subscribe to our channel to start the game.',
+            text='You need to subscribe to our channel for the game to work.',
             reply_markup=aiogram.types.InlineKeyboardMarkup(
                 inline_keyboard=[[
                     aiogram.types.InlineKeyboardButton(
                         text='Subscribe',
-                           url=f'https://t.me/{core.config.env.channel_username.lstrip("@")}'
+                        url=f'https://t.me/{core.config.env.channel_username.lstrip("@")}'
                     )
                 ]]
             )
@@ -55,4 +67,20 @@ async def on_message(
         text='hello',
         reply_markup=inline_keyboard.markup,
     )
+
+@all.dp.callback_query(is_bonus_callback)
+async def on_bonus_button_press(callback_query: aiogram.types.CallbackQuery):
+    await callback_query.message.edit_text(
+        text='hello buddy',
+        reply_markup=inline_keyboard.back_markup
+    )
+    await callback_query.answer()
+
+@all.dp.callback_query(is_back_callback)
+async def on_back_button_press(callback_query: aiogram.types.CallbackQuery):
+    await callback_query.message.edit_text(
+        text='hello',
+        reply_markup=inline_keyboard.markup
+    )
+    await callback_query.answer()
 
