@@ -85,7 +85,5 @@ async def on_back_button_press(callback_query: aiogram.types.CallbackQuery):
         reply_markup=inline_keyboard.markup
     )
     await callback_query.answer()
-        reply_markup=inline_keyboard.markup
-    )
-    await callback_query.answer()
+
 
