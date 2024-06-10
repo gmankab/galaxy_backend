@@ -17,6 +17,6 @@
 - [ ] autotests for hello message
 - [ ] add stickerpack
 - [ ] reward for a recruited friend
-- [ ] 'back' button
+- [x] bb7f26b2 'back' button
 - [ ] podman compose
 
