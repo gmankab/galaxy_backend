@@ -70,6 +70,7 @@ async def on_message(
 
 @all.dp.callback_query(is_bonus_callback)
 async def on_bonus_button_press(callback_query: aiogram.types.CallbackQuery):
+    assert isinstance(callback_query.message, aiogram.types.Message)
     await callback_query.message.edit_text(
         text='hello buddy',
         reply_markup=inline_keyboard.back_markup
@@ -78,8 +79,12 @@ async def on_bonus_button_press(callback_query: aiogram.types.CallbackQuery):
 
 @all.dp.callback_query(is_back_callback)
 async def on_back_button_press(callback_query: aiogram.types.CallbackQuery):
+    assert isinstance(callback_query.message, aiogram.types.Message)
     await callback_query.message.edit_text(
         text='hello',
+        reply_markup=inline_keyboard.markup
+    )
+    await callback_query.answer()
         reply_markup=inline_keyboard.markup
     )
     await callback_query.answer()
