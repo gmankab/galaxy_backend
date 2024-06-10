@@ -17,6 +17,7 @@
 - [ ] autotests for hello message
 - [ ] add stickerpack
 - [ ] reward for a recruited friend
+- [ ] reward for subscription to a channel
 - [x] bb7f26b2 'back' button
 - [ ] podman compose
 
