@@ -6,6 +6,7 @@ from tests import (
     coins,
     timer,
     ruff,
+    clans,
     init,
 )
 
@@ -13,6 +14,7 @@ from tests import (
 async def thread1():
     to_run_list: list[core.types.cor_str] = [
         init.create_user,
+        clans.check_basic,
         coins.get_coins,
         coins.add_coins,
         coins.start_autoclick,
