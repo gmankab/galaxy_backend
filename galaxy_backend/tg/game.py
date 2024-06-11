@@ -170,34 +170,28 @@ async def on_check_subscription(callback_query: aiogram.types.CallbackQuery):
     user_id = callback_query.from_user.id
     channel_username = core.config.env.channel_username.lstrip('@')
 
-    try:
-        member = await callback_query.bot.get_chat_member(f"@{channel_username}", user_id)
-        if member.status in ['member', 'administrator', 'creator']:
-            await callback_query.message.edit_text(
-                text=get_translation(translations, "thanks_for_joining"),
-                reply_markup=kb.check_markup
-            )
-        else:
+    if callback_query.bot is not None:
+        try:
+            member = await callback_query.bot.get_chat_member(f"@{channel_username}", user_id)
+            if member.status in ['member', 'administrator', 'creator']:
+                await callback_query.message.edit_text(
+                    text=get_translation(translations, "thanks_for_joining"),
+                    reply_markup=kb.check_markup
+                )
+            else:
+                await callback_query.message.edit_text(
+                    text=get_translation(translations, "not_subscribed"),
+                    reply_markup=kb.join_markup
+                )
+        except aiogram.exceptions.TelegramAPIError as e:
+            print(f"Error checking subscription: {e}")
             await callback_query.message.edit_text(
                 text=get_translation(translations, "not_subscribed"),
                 reply_markup=kb.join_markup
             )
-    except aiogram.exceptions.TelegramAPIError as e:
-        print(f"Error checking subscription: {e}")
+    else:
         await callback_query.message.edit_text(
-            text=get_translation(translations, "not_subscribed"),
+            text=get_translation(translations, "bot_error"),
             reply_markup=kb.join_markup
         )
     await callback_query.answer()
-
-def main():
-    # Make sure you initialize your bot and dispatcher here
-    bot = aiogram.Bot(token=core.config.env.bot_token)
-    dp = aiogram.Dispatcher(bot)
-
-    dp.include_router(all.dp)
-
-    aiogram.executor.start_polling(dp, skip_updates=True)
-
-if __name__ == '__main__':
-    main()
