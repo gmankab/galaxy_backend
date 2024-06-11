@@ -161,3 +161,43 @@ async def on_back_button_press(callback_query: aiogram.types.CallbackQuery):
 @all.dp.callback_query(is_check_subscription_callback)
 async def on_check_subscription(callback_query: aiogram.types.CallbackQuery):
     assert isinstance(callback_query.message, aiogram.types.Message)
+    user_language_code = callback_query.from_user.language_code
+    if user_language_code == 'ua':
+        user_language_code = 'uk'
+    translations = load_translations(user_language_code)
+    kb = InlineKeyboard(translations)
+
+    user_id = callback_query.from_user.id
+    channel_username = core.config.env.channel_username.lstrip('@')
+
+    try:
+        member = await callback_query.bot.get_chat_member(f"@{channel_username}", user_id)
+        if member.status in ['member', 'administrator', 'creator']:
+            await callback_query.message.edit_text(
+                text=get_translation(translations, "thanks_for_joining"),
+                reply_markup=kb.check_markup
+            )
+        else:
+            await callback_query.message.edit_text(
+                text=get_translation(translations, "not_subscribed"),
+                reply_markup=kb.join_markup
+            )
+    except aiogram.exceptions.TelegramAPIError as e:
+        print(f"Error checking subscription: {e}")
+        await callback_query.message.edit_text(
+            text=get_translation(translations, "not_subscribed"),
+            reply_markup=kb.join_markup
+        )
+    await callback_query.answer()
+
+def main():
+    # Make sure you initialize your bot and dispatcher here
+    bot = aiogram.Bot(token=core.config.env.bot_token)
+    dp = aiogram.Dispatcher(bot)
+
+    dp.include_router(all.dp)
+
+    aiogram.executor.start_polling(dp, skip_updates=True)
+
+if __name__ == '__main__':
+    main()
