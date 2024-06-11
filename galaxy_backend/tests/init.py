@@ -1,4 +1,4 @@
-from models.db import User, Clan
+from models.db import User
 import api.app
 
 async def create_user():

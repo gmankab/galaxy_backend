@@ -1,7 +1,4 @@
-import tortoise.exceptions
 from models.db import User, Clan, ClanOwner
-import models.other
-import asyncio
 
 async def create_clan(clan_name: str, clan_owner_id: int) -> Clan | None:
     clan_owner_user = await User.get(tg_id = clan_owner_id)
