@@ -7,18 +7,18 @@ import aiogram.utils
 import aiogram
 
 class inline_keyboard:
-    button1 = aiogram.types.InlineKeyboardButton(
+    start_button = aiogram.types.InlineKeyboardButton(
         text='start game',
         web_app=aiogram.types.WebAppInfo(
             url=core.config.env.game_url,
         ),
     )
-    button2 = aiogram.types.InlineKeyboardButton(
+    bonus_button = aiogram.types.InlineKeyboardButton(
         text='bonus',
         callback_data='bonus'
     )
     markup = aiogram.types.InlineKeyboardMarkup(
-        inline_keyboard=[[button1], [button2]]
+        inline_keyboard=[[start_button], [bonus_button]]
     )
 
     back_button = aiogram.types.InlineKeyboardButton(
