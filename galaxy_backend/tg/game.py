@@ -161,5 +161,3 @@ async def on_back_button_press(callback_query: aiogram.types.CallbackQuery):
 @all.dp.callback_query(is_check_subscription_callback)
 async def on_check_subscription(callback_query: aiogram.types.CallbackQuery):
     assert isinstance(callback_query.message, aiogram.types.Message)
-    user_id = callback_query.from_user.id
-    channel_username = core.config.env.channel
