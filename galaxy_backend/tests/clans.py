@@ -1,6 +1,5 @@
 from models.db import User, Clan
 import api.clans as clans
-import asyncio
 
 async def check_basic():
     #user0 = await User.create(tg_id = 0, coins = 0, autoclicks_remain = 0)
