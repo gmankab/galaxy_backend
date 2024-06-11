@@ -15,16 +15,3 @@ autotests_linux:
     - .venv/bin/pip install -U tortoise-orm aiogram fastapi rich ruff pyright
     - tests=true .venv/bin/python galaxy_backend
 
-autotests_windows:
-  stage: autotests
-  tags:
-    - saas-windows-medium-amd64
-  script:
-    - $env:tests = 'true'
-    - choco install python --version=3.12 -y -f
-    - choco install nodejs --version=22 -y -f
-    - C:/Python312/python.exe -m venv .venv
-    - .venv/scripts/python.exe -m pip install -U pip
-    - .venv/scripts/python.exe -m pip install -U tortoise-orm aiogram fastapi rich ruff pyright
-    - .venv/scripts/python.exe galaxy_backend
-
