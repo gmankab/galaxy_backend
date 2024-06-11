@@ -20,6 +20,6 @@
 - [ ] reward for subscription to a channel
 - [x] bb7f26b2 'back' button
 - [ ] podman compose
-- [ ] translate the bot to russian
-- [ ] translate the bot to ukrainian
+- [x] b3bd467a & 69449062 translate the bot to russian
+- [x] b3bd467a & 69449062 translate the bot to ukrainian
 
