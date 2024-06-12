@@ -2,7 +2,7 @@ import os
 
 
 class env:
-    game_url: str = 'https://gmanka.gitlab.io/galaxy_frontend'
+    game_url: str = 'https://gmankab.github.io/galaxy_frontend'
     db_url: str = 'sqlite://:memory:'
     tg_token: str = ''
     tests: str = ''
