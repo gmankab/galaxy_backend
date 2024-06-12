@@ -8,7 +8,7 @@
 - [x] a08eafd7 & d041a879 save user's coins count in database by his telegram id
 - [x] b215eff3 & d041a879 autotests for fastapi methods
 - [x] 10% done
-- [x] 798416f9 bot should request telegram channel subscription, channel id should be set in core/config.py
+- [x] 798416f9 channel subscription draft
 - [x] fcf6397e & 212dff51 fastapi `/coin/autoclick` method autoclicker to add coins in background
 - [x] 8f7a3676 pyright test
 - [x] 8f7a3676 ruff test
