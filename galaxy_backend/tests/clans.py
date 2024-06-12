@@ -1,6 +1,7 @@
 from models.db import User, Clan
 import api.clans as clans
 
+
 async def check_basic() -> str:
     user1 = await User.create(tg_id = 1)
     user2 = await User.create(tg_id = 2)
