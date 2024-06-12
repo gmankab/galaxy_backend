@@ -44,6 +44,12 @@ class InlineKeyboard:
             text=get_translation(translations, "join"),
             url=channel_link
         )
+
+        invite_friend_button = aiogram.types.InlineKeyboardButton(
+            text=get_translation(translations, "invite_friend_button"),
+            callback_data='invite_friend'
+        )
+
         channel_check_button = aiogram.types.InlineKeyboardButton(
             text=get_translation(translations, "check"),
             callback_data='check_subscription'
@@ -66,7 +72,7 @@ class InlineKeyboard:
         )
 
         self.task_markup = aiogram.types.InlineKeyboardMarkup(
-            inline_keyboard=[[join_channel_button], [main_back_button]]
+            inline_keyboard=[[join_channel_button], [invite_friend_button], [main_back_button]]
         )
 
 def is_bonus_callback(query: aiogram.types.CallbackQuery) -> bool:
