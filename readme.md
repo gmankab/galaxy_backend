@@ -1,3 +1,9 @@
+### deploy
+
+- [tg bot](https://t.me/galaxy_x_chain_bot)
+- [web frontend](https://gmankab.github.io/galaxy_frontend)
+- [backend api docs](https://paul.freemyip.com/docs)
+
 ### repositories
 
 - [backend repo](https://github.com/gmankab/galaxy_backend)

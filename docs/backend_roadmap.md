@@ -14,12 +14,31 @@
 - [x] 8f7a3676 ruff test
 - [x] f7b4d420 github actions autotests
 - [x] 1fe41e24 gitlab ci autotests
+- [x] bb7f26b2 'back' button
+- [x] b3bd467a & 69449062 translate the bot to russian
+- [x] b3bd467a & 69449062 translate the bot to ukrainian
+- [x] fcf6397e & a3a30f1f auto mining method
+- [x] fcf6397e & a3a30f1f end auto mining when the maximum time is reached
 - [ ] autotests for hello message
 - [ ] add stickerpack
 - [ ] reward for a recruited friend
 - [ ] reward for subscription to a channel
-- [x] bb7f26b2 'back' button
 - [ ] podman compose
-- [x] b3bd467a & 69449062 translate the bot to russian
-- [x] b3bd467a & 69449062 translate the bot to ukrainian
+- [ ] settings: connect twitter
+- [ ] settings: connect cryptowallet to the app
+- [ ] twitter: subscription
+- [ ] twitter: verification of subscription linked to player's account
+- [ ] twitter: retweet of a post and checking the retweet on the player's twitter account
+- [ ] clans: create
+- [ ] clans: raiting
+- [ ] clans: player rank number
+- [ ] clans: moderation
+- [ ] clans: inviting members
+- [ ] clans: removing members
+- [ ] clans: ranking algorithms
+- [ ] clans: ranking system
+- [ ] clans: ranking table
+- [ ] shop: crediting purchased rare resources to the player
+- [ ] shop: payment for purchases
+- [ ] shop: verification of completed payment
 
