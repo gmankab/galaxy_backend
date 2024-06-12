@@ -145,7 +145,10 @@ async def on_back_button_press(callback_query: aiogram.types.CallbackQuery):
 
     current_text = callback_query.message.text
 
-    if current_text == get_translation(translations, "click_to_join"):
+    if current_text == get_translation(translations, "thanks_for_joining"):
+        new_text = get_translation(translations, "coins_for_tasks")
+        new_markup = kb.task_markup
+    elif current_text == get_translation(translations, "click_to_join"):
         new_text = get_translation(translations, "coins_for_tasks")
         new_markup = kb.task_markup
     else:
@@ -195,3 +198,4 @@ async def on_check_subscription(callback_query: aiogram.types.CallbackQuery):
             reply_markup=kb.join_markup
         )
     await callback_query.answer()
+
