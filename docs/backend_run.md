@@ -6,7 +6,7 @@
 git clone https://gitlab.com/gmanka/galaxy_backend
 cd galaxy_backend
 python -m venv .venv
-.venb/bin/pip install -U pip
+.venv/bin/pip install -U pip
 .venv/bin/pip install -U tortoise-orm aiogram fastapi rich
 ```
 3. install autotests dependences
