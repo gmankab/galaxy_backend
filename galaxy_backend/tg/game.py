@@ -114,8 +114,8 @@ async def on_message(
 async def on_bonus_button_press(callback_query: aiogram.types.CallbackQuery):
     assert isinstance(callback_query.message, aiogram.types.Message)
     user_language_code = callback_query.from_user.language_code
-    if user_language_code == 'ua':
-        user_language_code = 'uk'
+    if user_language_code == 'uk':
+        user_language_code = 'ua'
     translations = load_translations(user_language_code)
     kb = InlineKeyboard(translations)
 
@@ -129,8 +129,8 @@ async def on_bonus_button_press(callback_query: aiogram.types.CallbackQuery):
 async def on_join_channel_button_press(callback_query: aiogram.types.CallbackQuery):
     assert isinstance(callback_query.message, aiogram.types.Message)
     user_language_code = callback_query.from_user.language_code
-    if user_language_code == 'ua':
-        user_language_code = 'uk'
+    if user_language_code == 'uk':
+        user_language_code = 'ua'
     translations = load_translations(user_language_code)
     kb = InlineKeyboard(translations)
 
@@ -144,8 +144,8 @@ async def on_join_channel_button_press(callback_query: aiogram.types.CallbackQue
 async def on_back_button_press(callback_query: aiogram.types.CallbackQuery):
     assert isinstance(callback_query.message, aiogram.types.Message)
     user_language_code = callback_query.from_user.language_code
-    if user_language_code == 'ua':
-        user_language_code = 'uk'
+    if user_language_code == 'uk':
+        user_language_code = 'ua'
     translations = load_translations(user_language_code)
     kb = InlineKeyboard(translations)
 
@@ -171,8 +171,8 @@ async def on_back_button_press(callback_query: aiogram.types.CallbackQuery):
 async def on_check_subscription(callback_query: aiogram.types.CallbackQuery):
     assert isinstance(callback_query.message, aiogram.types.Message)
     user_language_code = callback_query.from_user.language_code
-    if user_language_code == 'ua':
-        user_language_code = 'uk'
+    if user_language_code == 'uk':
+        user_language_code = 'ua'
     translations = load_translations(user_language_code)
     kb = InlineKeyboard(translations)
 
