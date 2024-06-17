@@ -19,6 +19,7 @@
 - [x] b3bd467a & 69449062 translate the bot to ukrainian
 - [x] fcf6397e & a3a30f1f auto mining method
 - [x] fcf6397e & a3a30f1f end auto mining when the maximum time is reached
+- [x] 30% done
 - [ ] autotests for hello message
 - [ ] add stickerpack
 - [ ] reward for a recruited friend
