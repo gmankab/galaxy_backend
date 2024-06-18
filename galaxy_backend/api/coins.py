@@ -57,7 +57,7 @@ async def start_autoclick(
     runs an autoclicker to add coins in background
     '''
     user = await models.db.User.get(tg_id=tg_id)
-    user.autoclicks_remain = core.config.env.clicks_count
+    user.autoclicks_remain = core.config.env.max_autoclicks
     await user.save()
     return models.other.Success()
 

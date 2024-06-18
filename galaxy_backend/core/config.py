@@ -7,7 +7,7 @@ class env:
     tg_token: str = ''
     tests: str = ''
     channel_username: str = '@foo'
-    clicks_count: int = 100
+    max_autoclicks: int = 100
     clicks_interval: int = 1
     #bonus_coins_count: int = 500
 
