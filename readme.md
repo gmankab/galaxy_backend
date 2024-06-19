@@ -18,7 +18,6 @@
 
 - [backend roadmap](https://github.com/gmankab/galaxy_backend/blob/main/docs/backend_roadmap.md)
 - [frontend roadmap](https://github.com/gmankab/galaxy_frontend/blob/main/docs/frontend_roadmap.md)
-- [frontend and backend](https://github.com/gmankab/galaxy_frontend/blob/main/docs/frontend_and_backend_roadmap.md)
 
 ### other
 
