@@ -20,6 +20,10 @@
 - [x] fcf6397e & a3a30f1f auto mining method
 - [x] fcf6397e & a3a30f1f end auto mining when the maximum time is reached
 - [x] 30% done
+- [x] d0393c2a & 00d34453 clans: create
+- [x] d0393c2a & 00d34453 clans: inviting members
+- [x] d0393c2a & 00d34453 clans: removing members
+    - rotlircreated the clan logic, grisha765 made requests and responses in fastapi
 - [ ] autotests for hello message
 - [ ] add stickerpack
 - [ ] reward for a recruited friend
@@ -30,12 +34,9 @@
 - [ ] twitter: subscription
 - [ ] twitter: verification of subscription linked to player's account
 - [ ] twitter: retweet of a post and checking the retweet on the player's twitter account
-- [ ] clans: create
 - [ ] clans: raiting
 - [ ] clans: player rank number
 - [ ] clans: moderation
-- [ ] clans: inviting members
-- [ ] clans: removing members
 - [ ] clans: ranking algorithms
 - [ ] clans: ranking system
 - [ ] clans: ranking table
