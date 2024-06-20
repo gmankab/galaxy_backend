@@ -21,7 +21,7 @@
 - [x] fcf6397e & a3a30f1f end auto mining when the maximum time is reached
 - [x] 30% done
 - [x] d0393c2a & 00d34453 clans: create
-- [x] d0393c2a & 00d34453 clans: inviting members
+- [x] 73ebde7 clans: inviting members
 - [x] d0393c2a & 00d34453 clans: removing members
     - rotlircreated the clan logic, grisha765 made requests and responses in fastapi
 - [ ] autotests for hello message
@@ -40,7 +40,6 @@
 - [ ] clans: ranking algorithms
 - [ ] clans: ranking system
 - [ ] clans: ranking table
-- [x] 73ebde7 clans: invite players
 - [ ] shop: crediting purchased rare resources to the player
 - [ ] shop: payment for purchases
 - [ ] shop: verification of completed payment
