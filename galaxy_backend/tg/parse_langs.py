@@ -8,7 +8,9 @@ class Lang:
         self,
         path: Path,
     ) -> None:
-        parsed_json = json.loads(path.read_text())
+        parsed_json = json.loads(
+            path.read_text(encoding='utf-8')
+        )
         for key in self.__annotations__.keys():
             if key in parsed_json:
                 val = parsed_json[key]
