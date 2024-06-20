@@ -17,3 +17,41 @@ async def sector_list() -> list[dict]:
         })
     return sectors_list
 
+
+@api.routers.planet.get('/list')
+async def planet_list() -> list[dict]:
+    '''
+    list planets
+    '''
+    planets_list: list[dict] = []
+    planets_models = await models.db.Planet.all().prefetch_related('sector')
+    for planet in planets_models:
+        planets_list.append({
+            'id': planet.id,
+            'sector': planet.sector.id,
+            'total_resources': planet.total_resources,
+            'mined_resources': planet.mined_resources,
+            'available': planet.available,
+        })
+    return planets_list
+
+
+@api.routers.sector.get('/get')
+async def sector_get(
+    sector_id: int
+) -> list[dict]:
+    '''
+    get planets from sector
+    '''
+    planets_list: list[dict] = []
+    planets_models = await models.db.Planet.filter(sector_id=sector_id).prefetch_related('sector')
+    for planet in planets_models:
+        planets_list.append({
+            'id': planet.id,
+            'sector': planet.sector.id,
+            'total_resources': planet.total_resources,
+            'mined_resources': planet.mined_resources,
+            'available': planet.available,
+        })
+    return planets_list
+
