@@ -11,7 +11,7 @@ async def check_basic() -> str:
     try:
         assert isinstance(clanA, Clan)
     except AssertionError:
-        return "create_clan() did not return object of type Clan"
+        raise AssertionError("create_clan() did not return a Clan object")
     await clanA.save()
     await clans.add_user(clanA.id, user2.tg_id)
     await clans.add_user(clanA.id, user3.tg_id)
@@ -25,7 +25,7 @@ async def check_basic() -> str:
     try:
         assert members_id == expected_members
     except AssertionError:
-        return "get_members() did not work correctly"
+        raise AssertionError("get_members() did not work correctly")
     await clans.remove_user(user2.tg_id)
     clanA_members = await clans.get_members(clanA.id)
     expected_members = [3, 4] # we expect user2 to be removed from the clan
@@ -36,6 +36,6 @@ async def check_basic() -> str:
     try:
         assert expected_members == expected_members
     except AssertionError:
-        return "remove_user() did not work correctly"
+        raise AssertionError("remove_user() did not work correctly")
     return "check basic functionality of clans"
 

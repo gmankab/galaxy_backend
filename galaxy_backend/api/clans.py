@@ -3,6 +3,8 @@ import fastapi
 import api.routers
 import models.other
 import models.clans
+from core.common import tg
+from aiogram.utils.deep_linking import create_start_link
 
 @api.routers.clan.post('/create_clan')
 async def create_clan_endpoint(request: models.clans.ClanCreateRequest):
@@ -77,4 +79,14 @@ async def get_owner(clan_id: int) -> int:
 
 async def get_members(clan_id: int) -> list[User]:
     return await User.filter(clan_id=clan_id)
+
+# get an invite link for a clan with id clan_id
+@api.routers.clan.get("/get_invite/{clan_id}")
+async def get_invite_link(clan_id: int):
+    try:
+        link = await create_start_link(tg.bot, f"joinclan_{clan_id}")
+        return {"link": link}
+    except Exception as e:
+        raise fastapi.HTTPException(status_code=400, detail=str(e))
+
 

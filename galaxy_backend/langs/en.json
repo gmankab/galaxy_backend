@@ -10,5 +10,12 @@
     "click_to_join": "Click the button below to join the channel",
     "thanks_for_joining": "Thanks for joining our channel, take your 1000 coins!",
     "not_joined_yet": "You did not join our channel. Please join our channel first.",
-    "invite_friend_button": "Invite a friend"
+    "invite_friend_button": "Invite a friend",
+    "clans_invalid_id": "Sorry, but this invite link is broken. Ask the person who gave it to you to provide you with an another.",
+    "clans_already_participate": "You already participate in this clan.",
+    "yes": "Yes",
+    "no": "No",
+    "clan_join_request": "You were invited to the clan \"%clan%\". Do you want to join this clan?",
+    "clan_join_confirmed": "Congratulations! You are a member of the clan \"%clan%\" now!",
+    "clan_join_denied": "You refused to join the clan \"%clan%\"."
 }
