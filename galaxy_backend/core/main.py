@@ -6,10 +6,13 @@ import api.autoclick
 import api.app
 import api.coins
 import api.clans
+import api.planets
 import api.routers
 
 app = api.app.app
 app.include_router(api.routers.coin)
 app.include_router(api.routers.clan)
 app.include_router(api.routers.clan_member)
+app.include_router(api.routers.sector)
+app.include_router(api.routers.planet)
 
