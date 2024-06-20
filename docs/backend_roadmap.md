@@ -34,12 +34,13 @@
 - [ ] twitter: subscription
 - [ ] twitter: verification of subscription linked to player's account
 - [ ] twitter: retweet of a post and checking the retweet on the player's twitter account
-- [ ] clans: raiting
+- [ ] clans: rating
 - [ ] clans: player rank number
 - [ ] clans: moderation
 - [ ] clans: ranking algorithms
 - [ ] clans: ranking system
 - [ ] clans: ranking table
+- [x] 73ebde7 clans: invite players
 - [ ] shop: crediting purchased rare resources to the player
 - [ ] shop: payment for purchases
 - [ ] shop: verification of completed payment
