@@ -3,7 +3,7 @@
 1. install python
 2. clone repo and install dependencies
 ```shell
-git clone https://gitlab.com/gmanka/galaxy_backend
+git clone https://github.com/gmankab/galaxy_backend
 cd galaxy_backend
 python -m venv .venv
 .venv/bin/pip install -U pip
