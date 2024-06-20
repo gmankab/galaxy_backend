@@ -6,7 +6,7 @@ import models.db
 
 
 @api.routers.coin.post('/add')
-async def set_coins(
+async def coin_add(
     request: models.coins.AddRequest,
 ) -> models.other.Success:
     '''
@@ -21,7 +21,7 @@ async def set_coins(
 @api.routers.coin.get(
     '/get',
 )
-async def get_coins(
+async def coin_get(
     tg_id: int,
 ) -> models.coins.GetResponse:
     '''
@@ -36,7 +36,7 @@ async def get_coins(
 @api.routers.coin.get(
     '/autoclick',
 )
-async def start_autoclick(
+async def coin_autoclick(
     tg_id: int,
 ) -> models.other.Success:
     '''
