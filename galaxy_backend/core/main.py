@@ -1,5 +1,6 @@
 # ruff: noqa: F401
-import tg.game as __game__
+import tg.hello as __hello__
+import tg.clans as __clans__
 import api.autoclick
 import api.app
 import api.coins
