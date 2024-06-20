@@ -16,7 +16,7 @@ async def create_clan_endpoint(request: models.clans.ClanCreateRequest):
         raise fastapi.HTTPException(status_code=400, detail=str(e))
 
 
-@api.routers.clan_members.post('/remove')
+@api.routers.clan_member.post('/remove')
 async def remove_user_endpoint(request: models.clans.UserRequest):
     try:
         await remove_user(request.user_id)
@@ -34,7 +34,7 @@ async def get_owner_endpoint(clan_id: int):
         raise fastapi.HTTPException(status_code=400, detail=str(e))
 
 
-@api.routers.clan_members.get('/get/{clan_id}')
+@api.routers.clan_member.get('/list/{clan_id}')
 async def get_members_endpoint(clan_id: int):
     try:
         members = await get_members(clan_id)
