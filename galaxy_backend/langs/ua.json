@@ -11,11 +11,11 @@
     "thanks_for_joining": "Дякуємо за приєднання до нашого каналу, ось ваші 1000 монет!",
     "not_joined_yet": "Ви не приєдналися до нашого каналу. Будь ласка, спочатку приєднайтеся до нашого каналу.",
     "invite_friend_button": "Запросити друга",
-    "clans_invalid_id": "Sorry, but this invite link is broken. Ask the person who gave it to you to provide you with an another.",
-    "clans_already_participate": "You already participate in this clan.",
-    "yes": "Yes",
-    "no": "No",
-    "clan_join_request": "You were invited to the clan \"%clan%\". Do you want to join this clan?",
-    "clan_join_confirmed": "Congratulations! You are a member of the clan \"%clan%\" now!",
-    "clan_join_denied": "You refused to join the clan \"%clan%\"."
+    "clans_invalid_id": "Вибачте, але це посилання для запрошення у клан не працює. Попросіть того, хто вам його дав, дати вам інше.",
+    "clans_already_participate": "Ви вже є учасником цього клану",
+    "yes": "Так",
+    "no": "Ні",
+    "clan_join_request": "Вас запросили до клану \"%clan%\". Чи хочете ви приєднатися до цього клану?",
+    "clan_join_confirmed": "Вітаємо! Ви тепер учасник клану \"%clan%\"!",
+    "clan_join_denied": "Ви відмовилися від приєднання до клану \"%clan%\"."
 }
