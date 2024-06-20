@@ -253,7 +253,7 @@ async def handle_start(msg: Message, command: CommandObject):
         except (ValueError, tortoise.exceptions.DoesNotExist):
             await msg.reply(get_translation(translation, "clans_invalid_id"))
 
-@all.dp.callback_query(ClanJoinCallback.filter(F.confirm==True))
+@all.dp.callback_query(ClanJoinCallback.filter(F.confirm))
 async def on_clan_join_confirm_button_press(callback_query: aiogram.types.CallbackQuery, callback_data: ClanJoinCallback):
     assert isinstance(callback_query.message, Message)
     lang_code = callback_query.from_user.language_code
@@ -269,7 +269,7 @@ async def on_clan_join_confirm_button_press(callback_query: aiogram.types.Callba
     new_text = new_text.replace("%clan%", clan.name)
     await callback_query.message.edit_text(text=new_text)
 
-@all.dp.callback_query(ClanJoinCallback.filter(F.confirm==False))
+@all.dp.callback_query(ClanJoinCallback.filter(not F.confirm))
 async def on_clan_deny_button_press(callback_query: aiogram.types.CallbackQuery, callback_data: ClanJoinCallback):
     assert isinstance(callback_query.message, Message)
     lang_code = callback_query.from_user.language_code
