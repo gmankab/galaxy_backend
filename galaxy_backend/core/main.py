@@ -1,6 +1,7 @@
 # ruff: noqa: F401
 import tg.hello as __hello__
 import tg.clans as __clans__
+import tg.bonuses as __bonuses__
 import api.autoclick
 import api.app
 import api.coins
