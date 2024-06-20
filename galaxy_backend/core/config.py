@@ -14,7 +14,7 @@ class env:
 class game:
     planets_per_sector: int = 10
     sectors_count: int = 25
-    planets_coaunt: int = sectors_count * planets_per_sector
+    planets_count: int = sectors_count * planets_per_sector
 
 
 def set_env():
