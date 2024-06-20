@@ -18,3 +18,14 @@ class ClanOwner(Model):
     clan = fields.OneToOneField('models.Clan', related_name='owner_clan')
     user = fields.OneToOneField('models.User', related_name='clan_owner')
 
+
+class Sector(Model):
+    id = fields.IntField(pk=True)
+    available = fields.BooleanField()
+
+
+class Planet(Model):
+    id = fields.IntField(pk=True)
+    sector = fields.ForeignKeyField('models.Sector', related_name='planets')
+    resources = fields.IntField()
+
