@@ -9,4 +9,5 @@ import api.routers
 app = api.app.app
 app.include_router(api.routers.coin)
 app.include_router(api.routers.clan)
+app.include_router(api.routers.clan_members)
 
