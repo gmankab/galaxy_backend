@@ -27,5 +27,7 @@ class Sector(Model):
 class Planet(Model):
     id = fields.IntField(pk=True)
     sector = fields.ForeignKeyField('models.Sector', related_name='planets')
-    resources = fields.IntField()
+    total_resources = fields.IntField()
+    mined_resources = fields.IntField()
+    available = fields.BooleanField()
 
