@@ -11,10 +11,15 @@ class env:
     clicks_interval: int = 1
 
 
-class game:
-    planets_per_sector: int = 10
-    sectors_count: int = 25
-    planets_count: int = sectors_count * planets_per_sector
+class sectors:
+    count: int = 25
+
+
+class planet:
+    initial_resources_count: int = 10000
+    resources_step: int = 1000
+    per_sector: int = 10
+    count: int = sectors.count * per_sector
 
 
 def set_env():
