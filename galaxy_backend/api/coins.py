@@ -1,10 +1,8 @@
-import tortoise.exceptions
 import api.routers
 import core.config
 import models.other
 import models.coins
 import models.db
-import fastapi
 
 
 @api.routers.coin.post('/add')
@@ -14,13 +12,7 @@ async def set_coins(
     '''
     add coins to balance
     '''
-    try:
-        user = await models.db.User.get(tg_id=request.tg_id)
-    except tortoise.exceptions.DoesNotExist:
-        raise fastapi.HTTPException(
-            status_code=404,
-            detail='unknown user id, you should dm tg bot first',
-        )
+    user, _ = await models.db.User.get_or_create(tg_id=request.tg_id)
     user.coins += request.amount
     await user.save()
     return models.other.Success()
@@ -35,13 +27,7 @@ async def get_coins(
     '''
     get balance
     '''
-    try:
-        user = await models.db.User.get(tg_id=tg_id)
-    except tortoise.exceptions.DoesNotExist:
-        raise fastapi.HTTPException(
-            status_code=404,
-            detail='unknown user id, you should dm tg bot first',
-        )
+    user, _ = await models.db.User.get_or_create(tg_id=tg_id)
     return models.coins.GetResponse(
         coins=user.coins,
     )
@@ -56,7 +42,7 @@ async def start_autoclick(
     '''
     runs an autoclicker to add coins in background
     '''
-    user = await models.db.User.get(tg_id=tg_id)
+    user, _ = await models.db.User.get_or_create(tg_id=tg_id)
     user.autoclicks_remain = core.config.env.max_autoclicks
     await user.save()
     return models.other.Success()
