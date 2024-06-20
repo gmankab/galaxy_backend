@@ -9,7 +9,13 @@ class env:
     channel_username: str = '@foo'
     max_autoclicks: int = 100
     clicks_interval: int = 1
-    #bonus_coins_count: int = 500
+
+
+class game:
+    planets_per_sector: int = 10
+    sectors_count: int = 25
+    planets_coaunt: int = sectors_count * planets_per_sector
+
 
 def set_env():
     for key, value_type in env.__annotations__.items():
