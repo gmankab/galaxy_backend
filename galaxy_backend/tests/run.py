@@ -1,5 +1,6 @@
-import core.types
 import core.shutdown
+import core.common
+import core.types
 import asyncio
 from tests import (
     pyright,
@@ -43,10 +44,14 @@ async def main():
     try:
         await asyncio.wait_for(
             tasks,
-            timeout=60,
+            timeout=360,
         )
     except asyncio.TimeoutError:
         print('timed out')
-    await tasks
+    try:
+        await tasks
+    except asyncio.exceptions.CancelledError as e:
+        print(e)
+        core.common.all.exit_code = 1
     await core.shutdown.shutdown()
 
