@@ -19,6 +19,8 @@ def get_toml_data(
 
 class path:
     app = Path(__file__).parent.parent.parent.resolve()
+    src = Path(__file__).parent.parent.resolve()
+    langs = src / 'langs'
     pyproject = app / 'pyproject.toml'
 
 

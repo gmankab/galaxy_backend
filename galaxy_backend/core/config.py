@@ -6,7 +6,7 @@ class env:
     db_url: str = 'sqlite://:memory:'
     tg_token: str = ''
     tests: str = ''
-    channel_username: str = '@foo'
+    channel_username: str = 'foo'
     max_autoclicks: int = 100
     clicks_interval: int = 1
 
