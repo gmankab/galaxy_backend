@@ -4,7 +4,6 @@ import aiogram.exceptions
 import core.config
 import tg.hello
 
-
 def is_bonus_callback(query: aiogram.types.CallbackQuery) -> bool:
     return query.data == 'bonus'
 
@@ -16,7 +15,6 @@ def is_join_channel_callback(query: aiogram.types.CallbackQuery) -> bool:
 
 def is_check_subscription_callback(query: aiogram.types.CallbackQuery) -> bool:
     return query.data == 'check_subscription'
-
 
 def get_task_markup(tr: Lang):
     join_channel_button = aiogram.types.InlineKeyboardButton(
@@ -34,7 +32,6 @@ def get_task_markup(tr: Lang):
     return aiogram.types.InlineKeyboardMarkup(
         inline_keyboard=[[join_channel_button], [invite_friend_button], [main_back_button]]
     )
-
 
 def get_join_markup(tr: Lang):
     channel_link = f'https://t.me/{core.config.env.channel_username}'
@@ -54,7 +51,6 @@ def get_join_markup(tr: Lang):
         inline_keyboard=[[join_button], [channel_check_button], [main_back_button]]
     )
 
-
 @all.dp.callback_query(is_bonus_callback)
 async def on_bonus_button_press(callback_query: aiogram.types.CallbackQuery):
     assert isinstance(callback_query.message, aiogram.types.Message)
@@ -67,7 +63,6 @@ async def on_bonus_button_press(callback_query: aiogram.types.CallbackQuery):
     )
     await callback_query.answer()
 
-
 @all.dp.callback_query(is_join_channel_callback)
 async def on_join_channel_button_press(callback_query: aiogram.types.CallbackQuery):
     assert isinstance(callback_query.message, aiogram.types.Message)
@@ -79,7 +74,6 @@ async def on_join_channel_button_press(callback_query: aiogram.types.CallbackQue
         reply_markup=get_join_markup(tr),
     )
     await callback_query.answer()
-
 
 @all.dp.callback_query(is_main_back_callback)
 async def on_back_button_press(callback_query: aiogram.types.CallbackQuery):
@@ -104,7 +98,6 @@ async def on_back_button_press(callback_query: aiogram.types.CallbackQuery):
     )
     await callback_query.answer()
 
-
 @all.dp.callback_query(is_check_subscription_callback)
 async def on_check_subscription(callback_query: aiogram.types.CallbackQuery):
     assert isinstance(callback_query.message, aiogram.types.Message)
@@ -118,7 +111,7 @@ async def on_check_subscription(callback_query: aiogram.types.CallbackQuery):
             callback_query.from_user.id,
         )
     except aiogram.exceptions.TelegramAPIError:
-        await callback_query.answer('not subscribed')
+        await callback_query.answer(tr.not_subscribed)
         return
     main_back_button = aiogram.types.InlineKeyboardButton(
         text=tr.back,
@@ -134,8 +127,7 @@ async def on_check_subscription(callback_query: aiogram.types.CallbackQuery):
         )
     else:
         await callback_query.message.edit_text(
-            text='not subscribed',
+            text=tr.not_subscribed,
             reply_markup=get_join_markup(tr)
         )
     await callback_query.answer()
-

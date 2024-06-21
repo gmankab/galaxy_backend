@@ -1,22 +1,13 @@
 from pathlib import Path
-import core.common
 import json
-
+import core.common
+from typing import Optional
 
 class Lang:
-    def __init__(
-        self,
-        path: Path,
-    ) -> None:
-        parsed_json = json.loads(
-            path.read_text(encoding='utf-8')
-        )
+    def __init__(self, path: Path, default_lang: Optional['Lang'] = None) -> None:
+        parsed_json = json.loads(path.read_text(encoding='utf-8'))
         for key in self.__annotations__.keys():
-            if key in parsed_json:
-                val = parsed_json[key]
-            else:
-                assert langs.en
-                val = getattr(langs.en, key)
+            val = parsed_json.get(key, getattr(default_lang, key) if default_lang else None)
             setattr(self, key, val)
 
     start_game: str
@@ -29,7 +20,6 @@ class Lang:
     coins_for_tasks: str
     click_to_join: str
     thanks_for_joining: str
-    not_joined_yet: str
     invite_friend_button: str
     clans_invalid_id: str
     clans_already_participate: str
@@ -38,20 +28,16 @@ class Lang:
     clan_join_request: str
     clan_join_confirmed: str
     clan_join_denied: str
+    not_subscribed: str
 
+def load_langs(path: Path) -> dict:
+    langs = {}
+    langs['en'] = Lang(path / 'en.json')
+    langs['ru'] = Lang(path / 'ru.json', default_lang=langs['en'])
+    langs['uk'] = Lang(path / 'uk.json', default_lang=langs['en'])
+    return langs
 
-class langs:
-    path = core.common.path.langs
-    en: Lang = Lang(path / 'en.json')
-    ru: Lang = Lang(path / 'ru.json')
-    uk: Lang = Lang(path / 'uk.json')
+langs = load_langs(core.common.path.langs)
 
-
-def get_tr(
-    lang_code: str,
-) -> Lang:
-    return langs.__dict__.get(
-        lang_code,
-        langs.en,
-    )
-
+def get_tr(lang_code: str) -> Lang:
+    return langs.get(lang_code, langs['en'])
