@@ -7,7 +7,6 @@
 - [x] a08eafd7 & d041a879 fastapi `/coin/add` method that increasing coins amount
 - [x] a08eafd7 & d041a879 save user's coins count in database by his telegram id
 - [x] b215eff3 & d041a879 autotests for fastapi methods
-- [x] 10% done
 - [x] 798416f9 channel subscription draft
 - [x] fcf6397e & 212dff51 fastapi `/coin/autoclick` method autoclicker to add coins in background
 - [x] 8f7a3676 pyright test
@@ -15,32 +14,38 @@
 - [x] f7b4d420 github actions autotests
 - [x] 1fe41e24 gitlab ci autotests
 - [x] bb7f26b2 'back' button
-- [x] b3bd467a & 69449062 translate the bot to russian
-- [x] b3bd467a & 69449062 translate the bot to ukrainian
+- [x] b3bd467a & 69449062 bot translation: russian
+- [x] b3bd467a & 69449062 bot translation: ukrainian
 - [x] fcf6397e & a3a30f1f auto mining method
 - [x] fcf6397e & a3a30f1f end auto mining when the maximum time is reached
 - [x] 30% done
-- [x] d0393c2a & 00d34453 clans: create
-- [x] 73ebde7 clans: inviting members
-- [x] d0393c2a & 00d34453 clans: removing members
-    - rotlircreated the clan logic, grisha765 made requests and responses in fastapi
+- [x] d0393c2a & 00d34453 clans: creating
+- [x] 73ebde7d clans: get owner
+- [x] 73ebde7d clans: inviting members
+- [x] d0393c2a clans: removing members
+- [x] d0393c2a clans: list members
+- [x] d0393c2a clans: autotests
+- [x] 00d34453 clans: fastapi methods
+- [x] 4b3a5f64 create 250 planets and 25 sectors in db
+- [x] 3e18b36e planets: list
+- [x] 3e18b36e sectors: list
+- [x] 3e18b36e sectors: get
+- [ ] security: check if request was from tg account owner
+- [ ] clans: members rankig
+- [ ] clans: global clans ranking
+- [ ] bot translation: belarussian
+- [ ] clans: fastapi methods autotests
 - [ ] autotests for hello message
-- [ ] add stickerpack
 - [ ] reward for a recruited friend
 - [ ] reward for subscription to a channel
-- [ ] podman compose
 - [ ] settings: connect twitter
 - [ ] settings: connect cryptowallet to the app
 - [ ] twitter: subscription
 - [ ] twitter: verification of subscription linked to player's account
 - [ ] twitter: retweet of a post and checking the retweet on the player's twitter account
-- [ ] clans: rating
-- [ ] clans: player rank number
-- [ ] clans: moderation
-- [ ] clans: ranking algorithms
-- [ ] clans: ranking system
-- [ ] clans: ranking table
 - [ ] shop: crediting purchased rare resources to the player
 - [ ] shop: payment for purchases
 - [ ] shop: verification of completed payment
+- [ ] add stickerpack
+- [ ] podman compose
 
