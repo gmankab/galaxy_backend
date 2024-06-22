@@ -38,7 +38,7 @@
 - [ ] reward for a recruited friend
 - [ ] reward for subscription to a channel
 - [ ] autotests for hello message
-- [ ] coins add method: should require `planet_id` to click on and reduce and increase `mined_resources` on planet in db
+- [ ] coins add method: should require `planet_id` to click on planet, and increase `mined_resources` value for clicked planet in db
 - [ ] coins add method: if `mined_resources` is more then total_resources, `available` parameter should change from `true` to `false`
 - [ ] coins add method: if planet became not available, next planet should become available
 - [ ] coins add method: should only work if planet is available, throw error if not available
