@@ -87,3 +87,22 @@ async def get_invite_link(clan_id: int):
     except Exception as e:
         raise fastapi.HTTPException(status_code=400, detail=str(e))
 
+
+@api.routers.clan.get('/list')
+async def list_clans():
+    try:
+        clans = await Clan.all()
+        clan_dict = {
+            'id': 0,
+            'name': ''
+        }
+        clans_dict = {}
+        for clan in clans:
+            assert isinstance(clan, Clan)
+            clan_dict['id'] = clan.id
+            clan_dict['name'] = clan.name
+            clans_dict[f'clan{clan.id}'] = clan_dict
+        return clans_dict
+    except Exception as e:
+        raise fastapi.HTTPException(status_code=400, detail=str(e))
+

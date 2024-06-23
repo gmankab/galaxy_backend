@@ -7,7 +7,6 @@ import aiogram
 import core.config
 import models.db
 
-
 def get_hello_markup(tr: Lang):
     start_button = aiogram.types.InlineKeyboardButton(
         text=tr.start_game,
@@ -63,6 +62,9 @@ async def handle_start(
         await user.save()
     if await models.db.User.filter(tg_id=user.tg_id, clan_id=clan.id).exists():
         await msg.reply(tr.clans_already_participate)
+        return
+    if await models.db.ClanOwner.exists(user_id=user.tg_id):
+        await msg.reply(tr.clan_already_owned)
         return
     clan_join_confirm_button = aiogram.types.InlineKeyboardButton(
         text=tr.yes,

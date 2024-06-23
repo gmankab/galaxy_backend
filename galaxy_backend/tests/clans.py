@@ -1,4 +1,4 @@
-from models.db import User, Clan
+from models.db import ClanOwner, User, Clan
 import api.clans as clans
 
 
@@ -34,8 +34,16 @@ async def check_basic() -> str:
         members_id.append(member.tg_id)
     members_id.sort()
     try:
-        assert expected_members == expected_members
+        assert members_id == expected_members
     except AssertionError:
         raise AssertionError("remove_user() did not work correctly")
+    # cleanup for further tests
+    clanA_owner = await ClanOwner.get(clan=clanA)
+    await clanA_owner.delete()
+    await clanA.delete()
+    await user1.delete()
+    await user2.delete()
+    await user3.delete()
+    await user4.delete()
     return "check basic functionality of clans"
 

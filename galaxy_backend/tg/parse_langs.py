@@ -29,6 +29,8 @@ class Lang:
     clan_join_confirmed: str
     clan_join_denied: str
     not_subscribed: str
+    clan_already_owned: str
+
 
 def load_langs(path: Path) -> dict:
     langs = {}

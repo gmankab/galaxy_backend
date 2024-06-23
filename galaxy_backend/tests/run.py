@@ -9,6 +9,7 @@ from tests import (
     ruff,
     clans,
     init,
+    clans_fastapi,
 )
 
 
@@ -16,6 +17,7 @@ async def thread1():
     to_run_list: list[core.types.cor_str] = [
         init.create_user,
         clans.check_basic,
+        clans_fastapi.run_tests,
         coins.get_coins,
         coins.add_coins,
         coins.start_autoclick,
