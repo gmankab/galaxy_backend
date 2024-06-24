@@ -38,12 +38,15 @@ async def check_basic() -> str:
     except AssertionError:
         raise AssertionError("remove_user() did not work correctly")
     # cleanup for further tests
-    clanA_owner = await ClanOwner.get(clan=clanA)
-    await clanA_owner.delete()
-    await clanA.delete()
-    await user1.delete()
-    await user2.delete()
-    await user3.delete()
-    await user4.delete()
+    clan_owners = await ClanOwner.all()
+    for clan_owner in clan_owners:
+        await clan_owner.delete()
+    all_clans = await Clan.all()
+    for clan in all_clans:
+        await clan.delete()
+    users = await User.all()
+    for user in users:
+        if user.tg_id != 0:
+            await user.delete()
     return "check basic functionality of clans"
 

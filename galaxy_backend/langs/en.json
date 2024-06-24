@@ -17,6 +17,7 @@
     "clan_join_request": "You were invited to the clan '{clan}'. Do you want to join this clan?",
     "clan_join_confirmed": "Congratulations! You are a member of the clan '{clan}' now!",
     "clan_join_denied": "You refused to join the clan '{clan}'",
-    "not_subscribed": "You are not subscribed"
+    "not_subscribed": "You are not subscribed",
+    "clan_already_owned": "You own a clan so you can't join an another clan."
 }
 

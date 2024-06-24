@@ -37,6 +37,7 @@ def load_langs(path: Path) -> dict:
     langs['en'] = Lang(path / 'en.json')
     langs['ru'] = Lang(path / 'ru.json', default_lang=langs['en'])
     langs['uk'] = Lang(path / 'uk.json', default_lang=langs['en'])
+    langs['be'] = Lang(path / 'be.json', default_lang=langs['en'])
     return langs
 
 langs = load_langs(core.common.path.langs)

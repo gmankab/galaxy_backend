@@ -14,6 +14,7 @@ from tests import (
 
 
 async def thread1():
+    # please don't change the order of the first 3 entries or tests may break
     to_run_list: list[core.types.cor_str] = [
         init.create_user,
         clans.check_basic,

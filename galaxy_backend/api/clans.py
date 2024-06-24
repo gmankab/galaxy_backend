@@ -74,8 +74,14 @@ async def get_owner(clan_id: int) -> int:
     return clan_owner_user.tg_id
 
 
+def sort_members(member: User) -> int:
+    return member.coins
+
+# now it always returns a list of users sorted by the amount of their coins
 async def get_members(clan_id: int) -> list[User]:
-    return await User.filter(clan_id=clan_id)
+    users = await User.filter(clan_id=clan_id)
+    users.sort(key=sort_members)
+    return users
 
 
 # get an invite link for a clan with id clan_id
@@ -88,20 +94,23 @@ async def get_invite_link(clan_id: int):
         raise fastapi.HTTPException(status_code=400, detail=str(e))
 
 
+# list all clans registered in the db
+# returns something like
+# {'clan2': {'id': 2, 'name': 'ClanA'}, 'clan3': {'id': 3, 'name': 'ClanB'}, 'clan4': {'id': 4, 'name': 'ClanC'}}
 @api.routers.clan.get('/list')
 async def list_clans():
     try:
         clans = await Clan.all()
+        clans_dict = {}
         clan_dict = {
             'id': 0,
             'name': ''
         }
-        clans_dict = {}
         for clan in clans:
             assert isinstance(clan, Clan)
             clan_dict['id'] = clan.id
             clan_dict['name'] = clan.name
-            clans_dict[f'clan{clan.id}'] = clan_dict
+            clans_dict[f'clan{clan.id}'] = clan_dict.copy()
         return clans_dict
     except Exception as e:
         raise fastapi.HTTPException(status_code=400, detail=str(e))
