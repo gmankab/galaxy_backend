@@ -26,16 +26,17 @@
 - [x] d0393c2a clans: list members
 - [x] d0393c2a clans: autotests
 - [x] 00d34453 clans: fastapi methods
-- [x] 4b3a5f64 create 250 planets and 25 sectors in db
-- [x] 3e18b36e planets: list
-- [x] 3e18b36e sectors: list
-- [x] 3e18b36e sectors: get
-- [ ] security: check if request was from tg account owner
-- [x] f69cc2d clans: members ranking
-- [ ] clans: global clans ranking
-- [x] f69cc2d clans: list all clans
+- [x] f69cc2d9 clans: list all clans
+- [x] f69cc2d9 clans: members ranking
+- [x] f69cc2d9 clans: fastapi methods autotests
+- [x] 58aa49f2 clans: refactor | 2h
+- [x] 1dcc1014 tg bot and translations refactor | 2h
+- [x] 4b3a5f64 create 250 planets and 25 sectors in db | 1h
+- [x] 3e18b36e planets: list | 1h
+- [x] 3e18b36e sectors: list | 1h
+- [x] 3e18b36e sectors: get | 1h
 - [x] f69cc2d bot translation: belarussian
-- [x] f69cc2d clans: fastapi methods autotests
+- [ ] security: check if request was from tg account owner
 - [ ] reward for a recruited friend
 - [ ] reward for subscription to a channel
 - [ ] autotests for hello message
