@@ -31,10 +31,10 @@
 - [x] 3e18b36e sectors: list
 - [x] 3e18b36e sectors: get
 - [ ] security: check if request was from tg account owner
-- [ ] clans: members rankig
+- [x] f69cc2d clans: members ranking
 - [ ] clans: global clans ranking
-- [ ] bot translation: belarussian
-- [ ] clans: fastapi methods autotests
+- [x] f69cc2d bot translation: belarussian
+- [x] f69cc2d clans: fastapi methods autotests
 - [ ] reward for a recruited friend
 - [ ] reward for subscription to a channel
 - [ ] autotests for hello message
