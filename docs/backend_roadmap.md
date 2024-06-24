@@ -33,6 +33,7 @@
 - [ ] security: check if request was from tg account owner
 - [x] f69cc2d clans: members ranking
 - [ ] clans: global clans ranking
+- [x] f69cc2d clans: list all clans
 - [x] f69cc2d bot translation: belarussian
 - [x] f69cc2d clans: fastapi methods autotests
 - [ ] reward for a recruited friend
