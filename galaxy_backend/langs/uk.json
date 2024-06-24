@@ -18,6 +18,6 @@
     "clan_join_confirmed": "Вітаємо! Ви тепер учасник клану '{clan}'!",
     "clan_join_denied": "Ви відмовилися від приєднання до клану '{clan}'",
     "not_subscribed": "Ви не підписані",
-    "clan_already_owned": "You own a clan so you can't join an another clan."
+    "clan_already_owned": "Ви вже володієте кланом, тому не можете приєднатися до іншого клану."
 }
 
