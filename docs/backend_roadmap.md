@@ -55,4 +55,4 @@
 - [ ] shop: verification of completed payment
 - [ ] add stickerpack
 - [ ] podman compose
-
+- [ ] planet resources mining
