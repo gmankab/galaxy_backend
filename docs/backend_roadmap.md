@@ -37,7 +37,8 @@
 - [x] 3e18b36e sectors: get | 1h
 - [x] f69cc2d bot translation: belarussian | 1h
 - [ ] security: check if request was from tg account owner
-- [ ] reward for a recruited friend
+- [x] a3ab1303 reward for a recruited friend | 2h
+- [x] a3ab1303 fastapi method to get invite for a friend + autotests | 1h
 - [ ] reward for subscription to a channel
 - [ ] autotests for hello message
 - [ ] coins add method: should require `planet_id` to click on planet, and increase `mined_resources` value for clicked planet in db
