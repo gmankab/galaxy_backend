@@ -30,6 +30,10 @@ class Lang:
     clan_join_denied: str
     not_subscribed: str
     clan_already_owned: str
+    already_have_account: str
+    ref_sender_msg: str
+    ref_receiver_msg: str
+    broken_invite: str
 
 
 def load_langs(path: Path) -> dict:

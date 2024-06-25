@@ -18,6 +18,10 @@
     "clan_join_confirmed": "Вітаємо! Ви тепер учасник клану '{clan}'!",
     "clan_join_denied": "Ви відмовилися від приєднання до клану '{clan}'",
     "not_subscribed": "Ви не підписані",
-    "clan_already_owned": "Ви вже володієте кланом, тому не можете приєднатися до іншого клану."
+    "clan_already_owned": "Ви вже володієте кланом, тому не можете приєднатися до іншого клану.",
+    "already_have_account": "Sorry, but you already have an account in the game so you can't receive a reward.",
+    "ref_sender_msg": "Someone activated your invite link! You received {coins} coins as a reward.",
+    "ref_receiver_msg": "Welcome to the game! You received {coins} coins as a bonus.",
+    "broken_invite": "Sorry, but this invite link is broken. Ask the person who gave it to you to provide you with an another."
 }
 

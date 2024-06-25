@@ -79,10 +79,9 @@ async def list_clans():
 
 
 async def get_invite(clan: Clan):
-    try:
-        info = await tg.bot.get_me()
-    except AttributeError: # if run without token
+    if not hasattr(tg, 'bot'): # if run without token
         return
+    info = await tg.bot.get_me()
     username = info.username
     expected_result = f'https://t.me/{username}?start=joinclan_{clan.id}'
     response = await all.async_client.get(f'/clan/get_invite/{clan.id}')

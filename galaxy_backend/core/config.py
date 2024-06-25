@@ -11,6 +11,12 @@ class env:
     clicks_interval: int = 1
 
 
+class bonus:
+    bot_invite_reward = 1000
+    channel_subscription_reward = 1000
+    prem_user_multiplier = 5
+
+
 class sectors:
     count: int = 25
 

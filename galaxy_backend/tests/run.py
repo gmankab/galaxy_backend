@@ -10,6 +10,7 @@ from tests import (
     clans,
     init,
     clans_fastapi,
+    ref,
 )
 
 
@@ -22,6 +23,7 @@ async def thread1():
         coins.get_coins,
         coins.add_coins,
         coins.start_autoclick,
+        ref.get_invite,
         ruff.ruff,
     ]
     for to_run in to_run_list:
