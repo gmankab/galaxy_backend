@@ -14,8 +14,8 @@
 - [x] f7b4d420 github actions autotests
 - [x] 1fe41e24 gitlab ci autotests
 - [x] bb7f26b2 'back' button
-- [x] b3bd467a & 69449062 bot translation: russian
-- [x] b3bd467a & 69449062 bot translation: ukrainian
+- [x] b3bd467a & 69449062 bot translation: russian | 1h
+- [x] b3bd467a & 69449062 bot translation: ukrainian | 1h
 - [x] fcf6397e & a3a30f1f auto mining method
 - [x] fcf6397e & a3a30f1f end auto mining when the maximum time is reached
 - [x] 30% done
